@@ -1,90 +1,159 @@
 {
   "schema_version": 1,
   "updated_at": "2026-09-12",
-  "note": "目前為示意佔位資料，優惠內容未經查證，僅供介面預覽",
+  "note": "優惠已依銀行官網查證（2026-09-12），出處見各規則 source_url",
   "cards": [
     {
-      "id": "esun-ubear",
-      "bank": "玉山銀行",
-      "name": "U Bear 信用卡",
+      "id": "taishin-richart",
+      "bank": "台新銀行",
+      "name": "Richart 卡（紫威版）",
       "network": "visa",
-      "base_reward": { "type": "cashback", "rate": 0.01, "note": "一般消費 1%" },
+      "card_type": "credit",
+      "base_reward": { "type": "points", "rate": 0.003, "note": "一般消費 0.3% 台新Point，無上限" },
       "rules": [
         {
-          "id": "esun-ubear-online-2026q3",
-          "title": "指定網購加碼",
-          "channels": { "merchants": ["shopee", "momo"], "categories": ["online"] },
-          "reward": { "type": "cashback", "rate": 0.038, "includes_base": true },
-          "cap": { "amount": 300, "period": "monthly", "basis": "reward" },
+          "id": "richart-chill-2026",
+          "title": "Chill刷：指定通路最高 10%",
+          "channels": { "merchants": ["haidilao", "fifty-lan", "netflix", "nike"] },
+          "reward": { "type": "points", "rate": 0.1, "includes_base": true },
           "valid_from": "2026-07-01",
-          "valid_to": "2026-12-31",
-          "conditions": ["需於活動頁登錄"]
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2（設定台新帳戶自動扣繳卡費）", "方案於 Richart Life APP 擇一啟用", "通路清單以官網為準（此處僅收錄常用通路）"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
         },
         {
-          "id": "esun-ubear-streaming-2026q3",
-          "title": "影音串流加碼",
-          "channels": { "categories": ["streaming"] },
-          "reward": { "type": "cashback", "rate": 0.1, "includes_base": true },
+          "id": "richart-pay-taishinpay-2026",
+          "title": "Pay著刷：台新Pay 3.8%",
+          "channels": { "merchants": ["seven-eleven", "familymart", "elife"], "payment_methods": ["taishin-pay"] },
+          "reward": { "type": "points", "rate": 0.038, "includes_base": true },
+          "valid_from": "2026-07-01",
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2", "方案擇一啟用"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
+        },
+        {
+          "id": "richart-pay-linepay-2026",
+          "title": "Pay著刷：LINE Pay／全盈+Pay 2.3%",
+          "channels": { "merchants": ["seven-eleven", "familymart", "elife"], "payment_methods": ["line-pay", "plus-pay"] },
+          "reward": { "type": "points", "rate": 0.023, "includes_base": true },
+          "valid_from": "2026-07-01",
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2", "方案擇一啟用"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
+        },
+        {
+          "id": "richart-daily-2026",
+          "title": "天天刷：超商／交通／藥妝 3.3%",
+          "channels": { "categories": ["convenience", "transit", "drugstore"] },
+          "reward": { "type": "points", "rate": 0.033, "includes_base": true },
+          "valid_from": "2026-07-01",
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2", "方案擇一啟用"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
+        },
+        {
+          "id": "richart-dining-2026",
+          "title": "好饗刷：餐飲／外送／飯店 3.3%",
+          "channels": { "categories": ["dining", "delivery", "hotel"] },
+          "reward": { "type": "points", "rate": 0.033, "includes_base": true },
+          "valid_from": "2026-07-01",
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2", "方案擇一啟用"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
+        },
+        {
+          "id": "richart-digital-2026",
+          "title": "數趣刷：蝦皮／momo／線上課程 3.3%",
+          "channels": { "merchants": ["shopee", "momo"], "categories": ["online"] },
+          "reward": { "type": "points", "rate": 0.033, "includes_base": true },
+          "valid_from": "2026-07-01",
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2", "方案擇一啟用"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
+        },
+        {
+          "id": "richart-holiday-2026",
+          "title": "假日刷：國內例假日不限通路 2%",
+          "channels": {},
+          "reward": { "type": "points", "rate": 0.02, "includes_base": true },
+          "valid_from": "2026-07-01",
+          "valid_to": "2027-03-31",
+          "conditions": ["需 LEVEL 2", "方案擇一啟用", "限國內例假日消費"],
+          "source_url": "https://mkp.taishinbank.com.tw/s/2025/RichartCard_2025/index.html",
+          "verified_at": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": "yuanta-diamond-easycard",
+      "bank": "元大銀行",
+      "name": "鑽金悠遊聯名卡",
+      "network": "mastercard",
+      "card_type": "credit",
+      "base_reward": { "type": "cashback", "rate": 0.012, "note": "國內一般消費 1.2%、海外 2.2%，無上限；悠遊卡自動加值不列入回饋" },
+      "rules": [
+        {
+          "id": "yuanta-taiwanpay-2026q3",
+          "title": "台灣Pay 加碼 8%",
+          "channels": { "payment_methods": ["taiwan-pay"] },
+          "reward": { "type": "cashback", "rate": 0.08, "includes_base": false },
           "cap": { "amount": 100, "period": "monthly", "basis": "reward" },
           "valid_from": "2026-07-01",
-          "valid_to": "2026-12-31",
-          "conditions": ["需綁定自動扣款"]
+          "valid_to": "2026-09-30",
+          "conditions": ["需於 2026/9/30 前登錄", "另有感應支付 2% 加碼（每卡每月上限 $100，免登錄）"],
+          "source_url": "https://www.yuantabank.com.tw/bank/creditCard/promotionActivity/list.do",
+          "verified_at": "2026-09-12"
         }
       ]
     },
     {
-      "id": "cathay-cube",
-      "bank": "國泰世華",
-      "name": "CUBE 卡",
+      "id": "ctbc-linepay-debit",
+      "bank": "中國信託",
+      "name": "LINE Pay 簽帳金融卡（熊大）",
       "network": "visa",
-      "base_reward": { "type": "cashback", "rate": 0.003, "note": "一般消費 0.3%" },
+      "card_type": "debit",
+      "base_reward": { "type": "points", "rate": 0.01, "note": "國內外一般消費 1% LINE POINTS（2026/7/1–12/31 回饋計劃；國外 2.8% 僅限信用卡，本卡不適用）" },
       "rules": [
         {
-          "id": "cathay-cube-digital-2026",
-          "title": "玩數位權益",
-          "channels": { "merchants": ["shopee", "momo", "netflix"], "categories": ["online", "streaming"] },
-          "reward": { "type": "cashback", "rate": 0.03, "includes_base": true },
-          "valid_from": "2026-01-01",
-          "valid_to": "2026-12-31",
-          "conditions": ["需於 App 切換至玩數位權益"]
-        },
-        {
-          "id": "cathay-cube-dining-2026",
-          "title": "樂饗購權益",
-          "channels": { "merchants": ["starbucks", "foodpanda", "uber-eats"], "categories": ["dining", "delivery"] },
-          "reward": { "type": "cashback", "rate": 0.03, "includes_base": true },
-          "valid_from": "2026-01-01",
-          "valid_to": "2026-12-31",
-          "conditions": ["需於 App 切換至樂饗購權益"]
-        }
-      ]
-    },
-    {
-      "id": "taishin-gogo",
-      "bank": "台新銀行",
-      "name": "@GoGo 卡",
-      "network": "mastercard",
-      "base_reward": { "type": "cashback", "rate": 0.005, "note": "一般消費 0.5%" },
-      "rules": [
-        {
-          "id": "taishin-gogo-online-2026h2",
-          "title": "指定網購加碼",
-          "channels": { "merchants": ["shopee", "momo", "pchome"], "categories": ["online"] },
-          "reward": { "type": "cashback", "rate": 0.035, "includes_base": true },
-          "cap": { "amount": 500, "period": "monthly", "basis": "reward" },
+          "id": "ctbc-lpd-shopee-taobao-2026h2",
+          "title": "脆好購：淘寶／蝦皮 5%",
+          "channels": { "merchants": ["shopee", "taobao"] },
+          "reward": { "type": "points", "rate": 0.05, "includes_base": true },
+          "cap": { "amount": 100, "period": "campaign", "basis": "reward" },
           "valid_from": "2026-07-01",
           "valid_to": "2026-12-31",
-          "conditions": ["需申請電子帳單", "需登錄"]
+          "conditions": ["需每月登錄（每月 6 號 10:00 開放，限量 8,000 名）", "加碼每人每季上限 100 點"],
+          "source_url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+          "verified_at": "2026-09-12"
         },
         {
-          "id": "taishin-gogo-pay-2026h2",
-          "title": "行動支付加碼",
-          "channels": { "categories": ["mobile-payment"] },
-          "reward": { "type": "cashback", "rate": 0.035, "includes_base": true },
-          "cap": { "amount": 200, "period": "monthly", "basis": "reward" },
-          "valid_from": "2026-07-01",
+          "id": "ctbc-lpd-coupang-2026q4",
+          "title": "脆好購：Coupang 酷澎 5%",
+          "channels": { "merchants": ["coupang"] },
+          "reward": { "type": "points", "rate": 0.05, "includes_base": true },
+          "cap": { "amount": 100, "period": "campaign", "basis": "reward" },
+          "valid_from": "2026-09-16",
           "valid_to": "2026-12-31",
-          "conditions": ["限 Apple Pay / Google Pay / LINE Pay"]
+          "conditions": ["需每月登錄（限量 8,000 名）", "加碼每人每季上限 100 點"],
+          "source_url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/page_shopping.html",
+          "verified_at": "2026-09-12"
+        },
+        {
+          "id": "ctbc-lpd-ipass-transit-2026",
+          "title": "一卡通大眾運輸回饋約 1%",
+          "channels": { "categories": ["transit"] },
+          "reward": { "type": "points", "rate": 0.01, "includes_base": true },
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31",
+          "conditions": ["需完成 LINE Pay 綁定", "每月累積每滿 $100 回 1 點，高鐵／計程車除外"],
+          "source_url": "https://www.ctbcbank.com/content/dam/minisite/long/creditcard/LINEPay/notice.html",
+          "verified_at": "2026-09-12"
         }
       ]
     }
@@ -93,12 +162,18 @@
     { "id": "shopee", "name": "蝦皮購物", "aliases": ["蝦皮", "shopee", "蝦皮商城"], "categories": ["online", "ecommerce"] },
     { "id": "momo", "name": "momo購物網", "aliases": ["momo", "富邦momo"], "categories": ["online", "ecommerce"] },
     { "id": "pchome", "name": "PChome 24h", "aliases": ["pchome", "PC家"], "categories": ["online", "ecommerce"] },
+    { "id": "taobao", "name": "淘寶", "aliases": ["taobao", "淘寶網"], "categories": ["online", "ecommerce"] },
+    { "id": "coupang", "name": "Coupang 酷澎", "aliases": ["coupang", "酷澎"], "categories": ["online", "ecommerce"] },
     { "id": "netflix", "name": "Netflix", "aliases": ["netflix", "網飛"], "categories": ["streaming"] },
     { "id": "spotify", "name": "Spotify", "aliases": ["spotify"], "categories": ["streaming"] },
     { "id": "pxmart", "name": "全聯福利中心", "aliases": ["全聯", "PX Mart", "pxmart"], "categories": ["supermarket"] },
     { "id": "seven-eleven", "name": "7-ELEVEN", "aliases": ["711", "7-11", "小七", "seven"], "categories": ["convenience"] },
     { "id": "familymart", "name": "全家便利商店", "aliases": ["全家", "familymart"], "categories": ["convenience"] },
+    { "id": "elife", "name": "全國電子", "aliases": ["全國電子", "elife"], "categories": ["electronics"] },
     { "id": "starbucks", "name": "星巴克", "aliases": ["starbucks", "星巴克咖啡"], "categories": ["dining"] },
+    { "id": "haidilao", "name": "海底撈", "aliases": ["海底撈火鍋"], "categories": ["dining"] },
+    { "id": "fifty-lan", "name": "50嵐", "aliases": ["五十嵐", "50lan"], "categories": ["dining"] },
+    { "id": "nike", "name": "Nike", "aliases": ["nike"], "categories": ["shopping"] },
     { "id": "foodpanda", "name": "foodpanda", "aliases": ["熊貓", "foodpanda"], "categories": ["delivery"] },
     { "id": "uber-eats", "name": "Uber Eats", "aliases": ["ubereats", "uber eats", "優食"], "categories": ["delivery"] }
   ],
@@ -110,6 +185,16 @@
     { "id": "dining", "name": "餐飲" },
     { "id": "delivery", "name": "外送平台" },
     { "id": "streaming", "name": "影音串流" },
-    { "id": "mobile-payment", "name": "行動支付" }
+    { "id": "transit", "name": "大眾運輸" },
+    { "id": "drugstore", "name": "藥妝" },
+    { "id": "hotel", "name": "飯店住宿" },
+    { "id": "electronics", "name": "3C 家電" },
+    { "id": "shopping", "name": "服飾運動" }
+  ],
+  "payments": [
+    { "id": "line-pay", "name": "LINE Pay", "aliases": ["linepay", "line pay"] },
+    { "id": "taishin-pay", "name": "台新Pay", "aliases": ["taishin pay"] },
+    { "id": "plus-pay", "name": "全盈+Pay", "aliases": ["全盈", "plus pay"] },
+    { "id": "taiwan-pay", "name": "台灣Pay", "aliases": ["taiwan pay", "台灣行動支付"] }
   ]
 }
