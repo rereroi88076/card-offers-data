@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-12",
+  "cards": [
+    {
+      "id": "example-bank-demo",
+      "bank": "範例銀行",
+      "name": "示範卡（佔位資料，待填入實際卡片後移除）",
+      "network": "visa",
+      "base_reward": { "type": "cashback", "rate": 0.01, "note": "一般消費 1%" },
+      "rules": [
+        {
+          "id": "example-online-2026q3",
+          "title": "指定網購 3.8%",
+          "channels": { "merchants": ["shopee", "momo"], "categories": ["online"] },
+          "reward": { "type": "cashback", "rate": 0.038, "includes_base": true },
+          "cap": { "amount": 300, "period": "monthly", "basis": "reward" },
+          "valid_from": "2026-07-01",
+          "valid_to": "2026-09-30",
+          "conditions": ["需於活動頁登錄"],
+          "source_url": "https://example.com/promo",
+          "verified_at": "2026-09-12"
+        }
+      ]
+    }
+  ],
+  "merchants": [
+    {
+      "id": "shopee",
+      "name": "蝦皮購物",
+      "aliases": ["蝦皮", "shopee", "蝦皮商城"],
+      "categories": ["online", "ecommerce"]
+    },
+    {
+      "id": "momo",
+      "name": "momo購物網",
+      "aliases": ["momo", "富邦momo"],
+      "categories": ["online", "ecommerce"]
+    },
+    {
+      "id": "pxmart",
+      "name": "全聯福利中心",
+      "aliases": ["全聯", "PX Mart", "pxmart"],
+      "categories": ["supermarket"]
+    }
+  ],
+  "categories": [
+    { "id": "online", "name": "網路消費" },
+    { "id": "ecommerce", "name": "電商平台" },
+    { "id": "supermarket", "name": "超市量販" }
+  ]
+}
