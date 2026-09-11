@@ -20,6 +20,7 @@
 |---|---|
 | `id` | 唯一識別碼，kebab-case，如 `esun-ubear` |
 | `bank` / `name` / `network` | 銀行、卡名、卡別（visa/mastercard/jcb） |
+| `card_type` | `credit`（預設）或 `debit`（簽帳金融卡） |
 | `base_reward` | 基礎回饋：`{ type, rate, note }`，`rate` 為小數（1% = 0.01） |
 | `rules` | 加碼優惠規則陣列，見下 |
 
@@ -29,7 +30,8 @@
 |---|---|
 | `id` | 規則唯一識別碼，建議帶期別，如 `esun-ubear-online-2026q3` |
 | `title` | 顯示名稱 |
-| `channels` | 適用範圍：`merchants`（店家 id 陣列）與/或 `categories`（類別 id 陣列） |
+| `channels` | 適用範圍：`merchants`（店家 id 陣列）、`categories`（類別 id 陣列）、`payment_methods`（支付方式 id 陣列，非空表示限用該支付才適用）。三者皆空＝不限通路 |
+| `exclusivity_group` | 同卡同組規則互斥（如 Richart「方案擇一啟用」），比價引擎只取組內最優一條並提示需切換方案 |
 | `reward` | `{ type: "cashback"\|"points", rate, includes_base }`；`includes_base: true` 表示 rate 已含基礎回饋（不可再疊加） |
 | `cap` | 上限：`{ amount, period: "monthly"\|"campaign", basis: "reward"\|"spending" }`，`basis: "reward"` 指回饋金額上限；無上限則省略 |
 | `valid_from` / `valid_to` | 活動期間（含當日） |
@@ -45,6 +47,12 @@
 | `name` | 正式名稱 |
 | `aliases` | 別名/關鍵字陣列，搜尋時模糊比對 |
 | `categories` | 所屬類別 id 陣列；規則以 `categories` 指定範圍時據此匹配 |
+
+### payments[]
+
+| 欄位 | 說明 |
+|---|---|
+| `id` / `name` / `aliases` | 支付方式（LINE Pay、台新Pay、台灣Pay…），規則的 `channels.payment_methods` 引用其 id |
 
 ## 維護流程
 
