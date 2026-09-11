@@ -1,52 +1,115 @@
 {
   "schema_version": 1,
   "updated_at": "2026-09-12",
+  "note": "目前為示意佔位資料，優惠內容未經查證，僅供介面預覽",
   "cards": [
     {
-      "id": "example-bank-demo",
-      "bank": "範例銀行",
-      "name": "示範卡（佔位資料，待填入實際卡片後移除）",
+      "id": "esun-ubear",
+      "bank": "玉山銀行",
+      "name": "U Bear 信用卡",
       "network": "visa",
       "base_reward": { "type": "cashback", "rate": 0.01, "note": "一般消費 1%" },
       "rules": [
         {
-          "id": "example-online-2026q3",
-          "title": "指定網購 3.8%",
+          "id": "esun-ubear-online-2026q3",
+          "title": "指定網購加碼",
           "channels": { "merchants": ["shopee", "momo"], "categories": ["online"] },
           "reward": { "type": "cashback", "rate": 0.038, "includes_base": true },
           "cap": { "amount": 300, "period": "monthly", "basis": "reward" },
           "valid_from": "2026-07-01",
-          "valid_to": "2026-09-30",
-          "conditions": ["需於活動頁登錄"],
-          "source_url": "https://example.com/promo",
-          "verified_at": "2026-09-12"
+          "valid_to": "2026-12-31",
+          "conditions": ["需於活動頁登錄"]
+        },
+        {
+          "id": "esun-ubear-streaming-2026q3",
+          "title": "影音串流加碼",
+          "channels": { "categories": ["streaming"] },
+          "reward": { "type": "cashback", "rate": 0.1, "includes_base": true },
+          "cap": { "amount": 100, "period": "monthly", "basis": "reward" },
+          "valid_from": "2026-07-01",
+          "valid_to": "2026-12-31",
+          "conditions": ["需綁定自動扣款"]
+        }
+      ]
+    },
+    {
+      "id": "cathay-cube",
+      "bank": "國泰世華",
+      "name": "CUBE 卡",
+      "network": "visa",
+      "base_reward": { "type": "cashback", "rate": 0.003, "note": "一般消費 0.3%" },
+      "rules": [
+        {
+          "id": "cathay-cube-digital-2026",
+          "title": "玩數位權益",
+          "channels": { "merchants": ["shopee", "momo", "netflix"], "categories": ["online", "streaming"] },
+          "reward": { "type": "cashback", "rate": 0.03, "includes_base": true },
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31",
+          "conditions": ["需於 App 切換至玩數位權益"]
+        },
+        {
+          "id": "cathay-cube-dining-2026",
+          "title": "樂饗購權益",
+          "channels": { "merchants": ["starbucks", "foodpanda", "uber-eats"], "categories": ["dining", "delivery"] },
+          "reward": { "type": "cashback", "rate": 0.03, "includes_base": true },
+          "valid_from": "2026-01-01",
+          "valid_to": "2026-12-31",
+          "conditions": ["需於 App 切換至樂饗購權益"]
+        }
+      ]
+    },
+    {
+      "id": "taishin-gogo",
+      "bank": "台新銀行",
+      "name": "@GoGo 卡",
+      "network": "mastercard",
+      "base_reward": { "type": "cashback", "rate": 0.005, "note": "一般消費 0.5%" },
+      "rules": [
+        {
+          "id": "taishin-gogo-online-2026h2",
+          "title": "指定網購加碼",
+          "channels": { "merchants": ["shopee", "momo", "pchome"], "categories": ["online"] },
+          "reward": { "type": "cashback", "rate": 0.035, "includes_base": true },
+          "cap": { "amount": 500, "period": "monthly", "basis": "reward" },
+          "valid_from": "2026-07-01",
+          "valid_to": "2026-12-31",
+          "conditions": ["需申請電子帳單", "需登錄"]
+        },
+        {
+          "id": "taishin-gogo-pay-2026h2",
+          "title": "行動支付加碼",
+          "channels": { "categories": ["mobile-payment"] },
+          "reward": { "type": "cashback", "rate": 0.035, "includes_base": true },
+          "cap": { "amount": 200, "period": "monthly", "basis": "reward" },
+          "valid_from": "2026-07-01",
+          "valid_to": "2026-12-31",
+          "conditions": ["限 Apple Pay / Google Pay / LINE Pay"]
         }
       ]
     }
   ],
   "merchants": [
-    {
-      "id": "shopee",
-      "name": "蝦皮購物",
-      "aliases": ["蝦皮", "shopee", "蝦皮商城"],
-      "categories": ["online", "ecommerce"]
-    },
-    {
-      "id": "momo",
-      "name": "momo購物網",
-      "aliases": ["momo", "富邦momo"],
-      "categories": ["online", "ecommerce"]
-    },
-    {
-      "id": "pxmart",
-      "name": "全聯福利中心",
-      "aliases": ["全聯", "PX Mart", "pxmart"],
-      "categories": ["supermarket"]
-    }
+    { "id": "shopee", "name": "蝦皮購物", "aliases": ["蝦皮", "shopee", "蝦皮商城"], "categories": ["online", "ecommerce"] },
+    { "id": "momo", "name": "momo購物網", "aliases": ["momo", "富邦momo"], "categories": ["online", "ecommerce"] },
+    { "id": "pchome", "name": "PChome 24h", "aliases": ["pchome", "PC家"], "categories": ["online", "ecommerce"] },
+    { "id": "netflix", "name": "Netflix", "aliases": ["netflix", "網飛"], "categories": ["streaming"] },
+    { "id": "spotify", "name": "Spotify", "aliases": ["spotify"], "categories": ["streaming"] },
+    { "id": "pxmart", "name": "全聯福利中心", "aliases": ["全聯", "PX Mart", "pxmart"], "categories": ["supermarket"] },
+    { "id": "seven-eleven", "name": "7-ELEVEN", "aliases": ["711", "7-11", "小七", "seven"], "categories": ["convenience"] },
+    { "id": "familymart", "name": "全家便利商店", "aliases": ["全家", "familymart"], "categories": ["convenience"] },
+    { "id": "starbucks", "name": "星巴克", "aliases": ["starbucks", "星巴克咖啡"], "categories": ["dining"] },
+    { "id": "foodpanda", "name": "foodpanda", "aliases": ["熊貓", "foodpanda"], "categories": ["delivery"] },
+    { "id": "uber-eats", "name": "Uber Eats", "aliases": ["ubereats", "uber eats", "優食"], "categories": ["delivery"] }
   ],
   "categories": [
     { "id": "online", "name": "網路消費" },
     { "id": "ecommerce", "name": "電商平台" },
-    { "id": "supermarket", "name": "超市量販" }
+    { "id": "supermarket", "name": "超市量販" },
+    { "id": "convenience", "name": "便利商店" },
+    { "id": "dining", "name": "餐飲" },
+    { "id": "delivery", "name": "外送平台" },
+    { "id": "streaming", "name": "影音串流" },
+    { "id": "mobile-payment", "name": "行動支付" }
   ]
 }
